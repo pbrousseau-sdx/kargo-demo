@@ -15,6 +15,11 @@ spec:
       containers:
       - image: public.ecr.aws/nginx/nginx:1.29.4
         name: nginx
+        resources:
+          limits:
+            cpu: 50m
+          requests:
+            cpu: 10m
         volumeMounts:
         - mountPath: /usr/share/nginx/html
           name: content
